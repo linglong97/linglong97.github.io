@@ -2,13 +2,15 @@
 <html>
 <head>
 	<title>Neural Synchrony</title>
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	
 	<link rel="stylesheet" type="text/css" href="assets/css/paper.css">
 	<script type="text/javascript" src = 'https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.9/howler.core.min.js'></script>
 	<script type="text/javascript" src = 'assets/js/paper-full.js'></script>
-	
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
 </head>
 <body>
+
 	<script type="text/paperscript" canvas="myCanvas">
 		// Create a Paper.js Path to draw a line into it:
 		//var path = new Path();
@@ -23,7 +25,17 @@
 		var circles = [];
 	 	//var newCircle = new Path.Circle(new Point(300,300), 100);
 	 	//newCircle.fillColor = 'pink';
-	 	var text = new PointText({
+	 	
+
+		var backgroundMusic = new Howl({
+			src:['music.mp3'],
+			 loop: true,
+			 volume: 0.3,
+		});
+		soundId = backgroundMusic.play();
+		
+
+		var text = new PointText({
 			point: [Math.floor(view.size.width/2)-315, Math.floor(view.size.height/2)],
 			content: 'Press Any Key to Start!',
 			fillColor: 'white',
@@ -32,13 +44,28 @@
 			fontSize: 50
 		});
 
-		var backgroundMusic = new Howl({
-			src:['music.mp3'],
-			 autoplay: true,
-			 loop: true,
-			 volume: 0.3,
-		});
-		
+		var musicOn = new PointText({
+			content: 'Background Music: On',
+			point:[50,50],
+			fillColor:'white',
+			fontFamily:'Roboto Mono',
+			fontWeight: 'bolt',
+			fontSize:50
+		})
+
+		musicOn.onClick = function(event){
+
+		if( this.content == 'Background Music: On'){
+			this.content = 'Background Music: Off';
+			backgroundMusic.pause();
+		}
+		else{
+			this.content = 'Background Music: On';
+			backgroundMusic.autoplay = true;
+			backgroundMusic.play();
+		}
+		}
+
 		var data = {
 	q: {
 		sound: new Howl({
@@ -232,8 +259,12 @@
 
 		 	}
 	 	}
+
+	 
 	</script>
 
-	<canvas id = 'myCanvas' resize><h1>Hello World</h1></canvas>
+	<canvas id = 'myCanvas' resize></canvas>
+
+
 </body>
 </html>
