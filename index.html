@@ -36,7 +36,7 @@
 			src:['music.mp3'],
 			 autoplay: true,
 			 loop: true,
-			 volume: 0.5,
+			 volume: 0.3,
 		});
 		
 		var data = {
@@ -209,6 +209,7 @@
 		 		var randomCircle = new Path.Circle(viewPoint, size);
 		 		randomCircle.fillColor = new Color(r,g,b);
 		 		//randomCircle.fillColor = data[event.key].color;
+		 		data[event.key].sound.volume(0.1);
 		 		data[event.key].sound.play();
 		 		circles.push(randomCircle)
 	 	}
