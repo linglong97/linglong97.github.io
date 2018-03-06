@@ -209,7 +209,7 @@
 		 		var randomCircle = new Path.Circle(viewPoint, size);
 		 		randomCircle.fillColor = new Color(r,g,b);
 		 		//randomCircle.fillColor = data[event.key].color;
-		 		data[event.key].sound.volume(0.1);
+		 		data[event.key].sound.volume(0.2);
 		 		data[event.key].sound.play();
 		 		circles.push(randomCircle)
 	 	}
@@ -220,7 +220,7 @@
 
 	 		for(var i = 0; i < circles.length;i++){
 		 		circles[i].fillColor.hue += 0.5;
-		 		circles[i].scale(0.95);
+		 		circles[i].scale(0.97);
 		 		if (circles[i].area<1){
 		 			circles[i].remove();
 		 			circles.splice(i,1);
