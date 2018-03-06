@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 	<title>Neural Synchrony</title>
 	
 	<link rel="stylesheet" type="text/css" href="assets/css/paper.css">
 	<script type="text/javascript" src = 'https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.9/howler.core.min.js'></script>
 	<script type="text/javascript" src = 'assets/js/paper-full.js'></script>
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+	
 
 </head>
 <body>
 
 	<script type="text/paperscript" canvas="myCanvas">
+		
+
+		
 		// Create a Paper.js Path to draw a line into it:
 		//var path = new Path();
 		// Give the stroke a color
@@ -34,18 +38,18 @@
 		});
 		
 		
-
 		var text = new PointText({
-			point: [Math.floor(view.size.width/2)-315, Math.floor(view.size.height/2)],
-			content: 'Press Any Key to Start!',
-			fillColor: 'white',
 			fontFamily: 'Roboto Mono',
 			fontWeight: 'bold',
-			fontSize: 50
+			fontSize: 50,
+			point: [Math.floor(view.size.width/2)-315, Math.floor(view.size.height/2)],
+			content: 'Press Any Key to Start!',
+			fillColor: 'white'
 		});
+		
 
 		var musicOn = new PointText({
-			content: 'Click here for Background Music!',
+			content: 'Background Music: Off',
 			point:[50,50],
 			fillColor:'white',
 			fontFamily:'Roboto Mono',
@@ -259,6 +263,8 @@
 
 		 	}
 	 	}
+	
+		
 
 	 
 	</script>
