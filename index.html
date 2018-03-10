@@ -303,7 +303,9 @@
 					fade_out = false;
 					has_object = false;
 					init = true;
-
+					for(var i =0; i < allFades.length; i++){
+							allFades[i].opacity = 0;
+					}		
 				}
 				else{
 					if (randomCircle.opacity >= 0.01){
