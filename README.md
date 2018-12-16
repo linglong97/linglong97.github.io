@@ -1,2 +1,2 @@
-# tadpoleGame
-A snake game which features a tadpole in a lake and some calming music. Made using HowlerJS, PaperJS, and HTML/CSS.
+# Personal Website
+Just my personal site, doesn't have too much of a portfolio on it due to me not documenting projects super well. Maybe in the future will document some old projects or add some new ones with better documentation.
